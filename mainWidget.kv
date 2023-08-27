@@ -20,7 +20,7 @@
                 pos: 0,0
             Color:
                 #rgb: .9, 0, 0
-                rgb: utils.get_color_from_hex('#7D0101')
+                rgb: utils.get_color_from_hex('#8C55FF')
             Line:
                 points: (0, 0.9*self.parent.height, self.parent.width, 0.9*self.parent.height)
                 width: 5
@@ -274,6 +274,50 @@
             #     points: int(self.parent.width)*0.01, int(self.parent.height)*0.18, int(self.parent.width)*0.26, int(self.parent.height)*0.18
             #     width: 2
 
+            # ---------- Corrente (INA)
+            Color:
+                rgb: .5, .5, .5
+            Line:
+                points: int(self.parent.width)*.1, int(self.parent.height)*0.04, int(self.parent.width)*.17, int(self.parent.height)*0.04
+                width: 2
+            Line:
+                points: int(self.parent.width)*.1, int(self.parent.height)*0.13, int(self.parent.width)*.17, int(self.parent.height)*0.13
+                width: 2
+            Line:
+                points: int(self.parent.width)*.1, int(self.parent.height)*0.04, int(self.parent.width)*.1, int(self.parent.height)*0.13
+                width: 2
+            Line:
+                points: int(self.parent.width)*.17, int(self.parent.height)*0.04, int(self.parent.width)*.17, int(self.parent.height)*0.13
+                width: 2
+            Color:
+                rgb: .7, .7, .7
+            Rectangle:
+                pos: int(self.parent.width)*0.1, int(self.parent.height)*0.04
+                size: int(self.parent.width)*.07,  int(self.parent.height)*0.09
+
+
+            # ---------- Potencia (INA)
+            Color:
+                rgb: .5, .5, .5
+            Line:
+                points: int(self.parent.width)*.18, int(self.parent.height)*0.04, int(self.parent.width)*.25, int(self.parent.height)*0.04
+                width: 2
+            Line:
+                points: int(self.parent.width)*.18, int(self.parent.height)*0.13, int(self.parent.width)*.25, int(self.parent.height)*0.13
+                width: 2
+            Line:
+                points: int(self.parent.width)*.18, int(self.parent.height)*0.04, int(self.parent.width)*.18, int(self.parent.height)*0.13
+                width: 2
+            Line:
+                points: int(self.parent.width)*.25, int(self.parent.height)*0.04, int(self.parent.width)*.25, int(self.parent.height)*0.13
+                width: 2
+            Color:
+                rgb: .7, .7, .7
+            Rectangle:
+                pos: int(self.parent.width)*0.18, int(self.parent.height)*0.04
+                size: int(self.parent.width)*.07,  int(self.parent.height)*0.09
+
+
 
 
             # ---------- Giroscopio
@@ -493,6 +537,48 @@
             # Line:
             #     points: int(self.parent.width)*0.01, int(self.parent.height)*0.82, int(self.parent.width)*0.26, int(self.parent.height)*0.82
             #     width: 2
+
+        # ------------------ O2
+            Color:
+                rgb: .5, .5, .5
+            Line:
+                points: int(self.parent.width)*.1, int(self.parent.height)*0.68, int(self.parent.width)*.17, int(self.parent.height)*0.68
+                width: 2
+            Line:
+                points: int(self.parent.width)*.1, int(self.parent.height)*0.77, int(self.parent.width)*.17, int(self.parent.height)*0.77
+                width: 2
+            Line:
+                points: int(self.parent.width)*.1, int(self.parent.height)*0.68, int(self.parent.width)*.1, int(self.parent.height)*0.77
+                width: 2
+            Line:
+                points: int(self.parent.width)*.17, int(self.parent.height)*0.68, int(self.parent.width)*.17, int(self.parent.height)*0.77
+                width: 2
+            Color:
+                rgb: .7, .7, .7
+            Rectangle:
+                pos: int(self.parent.width)*.1, int(self.parent.height)*0.68
+                size: int(self.parent.width)*.07,  int(self.parent.height)*0.09
+
+        # ------------------ O2
+            Color:
+                rgb: .5, .5, .5
+            Line:
+                points: int(self.parent.width)*.18, int(self.parent.height)*0.68, int(self.parent.width)*.25, int(self.parent.height)*0.68
+                width: 2
+            Line:
+                points: int(self.parent.width)*.18, int(self.parent.height)*0.77, int(self.parent.width)*.25, int(self.parent.height)*0.77
+                width: 2
+            Line:
+                points: int(self.parent.width)*.18, int(self.parent.height)*0.68, int(self.parent.width)*.18, int(self.parent.height)*0.77
+                width: 2
+            Line:
+                points: int(self.parent.width)*.25, int(self.parent.height)*0.68, int(self.parent.width)*.25, int(self.parent.height)*0.77
+                width: 2
+            Color:
+                rgb: .7, .7, .7
+            Rectangle:
+                pos: int(self.parent.width)*.18, int(self.parent.height)*0.68
+                size: int(self.parent.width)*.07,  int(self.parent.height)*0.09
             
             
 
@@ -536,20 +622,20 @@
                 orientation: 'vertical'
                 Label:
                     id: eletronica
-                    text: 'SETOR ELETRÔNICA'
+                    text: 'NÚCLEO DE SATELITES'
                     bold: True
                     text_size: self.size
                     valign: 'center'
                     halign: 'center'
                     font_size: self.parent.width/35
-                Label:
-                    id: data
-                    text: '29/05/2021'
-                    bold: True
-                    text_size: self.size
-                    valign: 'center'
-                    halign: 'center'
-                    font_size: self.parent.width/35
+         #       Label:
+         #           id: data
+         #           text: '29/05/2021'
+         #           bold: True
+         #           text_size: self.size
+         #           valign: 'center'
+         #           halign: 'center'
+         #           font_size: self.parent.width/35
 
         # ------------------------------------------------------------------------------------------------------------
         # --------------------------------------- Dados foguete (ABA LATERAL) ----------------------------------------
@@ -737,6 +823,34 @@
                 font_size: self.parent.width/5.6
                 font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
                 color: 0, 0, 0, 1
+
+        # ------------------------- Corrente (INA) ------------------------------
+        BoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'x': .1, 'y': .14} 
+            size_hint: (.07, .03)
+            Label:
+                text: 'Corrente'
+                text_size: self.size
+                valign: 'center'
+                halign: 'left'
+                font_size: self.parent.width/5.6
+                font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
+                color: 0, 0, 0, 1
+
+        # ------------------------- Corrente (INA) ------------------------------
+        BoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'x': .18, 'y': .14} 
+            size_hint: (.07, .03)
+            Label:
+                text: 'Potência'
+                text_size: self.size
+                valign: 'center'
+                halign: 'left'
+                font_size: self.parent.width/5.6
+                font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
+                color: 0, 0, 0, 1
         
         # ------------------------- Giroscopio ------------------------------
         BoxLayout:
@@ -883,6 +997,34 @@
             size_hint: (.07, .03)
             Label:
                 text: 'Altitude'
+                text_size: self.size
+                valign: 'center'
+                halign: 'left'
+                font_size: self.parent.width/5.6
+                font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
+                color: 0, 0, 0, 1
+
+        # ------------------------- O2 ------------------------------
+        BoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'x': .1, 'y': .78} 
+            size_hint: (.07, .03)
+            Label:
+                text: 'O2'
+                text_size: self.size
+                valign: 'center'
+                halign: 'left'
+                font_size: self.parent.width/5.6
+                font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
+                color: 0, 0, 0, 1
+
+        # ------------------------ CO2 ------------------------------
+        BoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'x': .18, 'y': .78} 
+            size_hint: (.07, .03)
+            Label:
+                text: 'CO2'
                 text_size: self.size
                 valign: 'center'
                 halign: 'left'
@@ -1134,7 +1276,7 @@
             size_hint: .03, .03
             pos_hint: {'x': .2815 , 'y':.685}
             Label:
-                text: 'Altitude'
+                text: 'SoC'
                 bold: True
                 text_size: self.size
                 valign: 'bottom'
@@ -1148,7 +1290,7 @@
             size_hint: .06, .03
             pos_hint: {'x': .685 , 'y':.405}
             Label:
-                text: 'Trajetória'
+                text: 'DoD'
                 bold: True
                 text_size: self.size
                 valign: 'bottom'
@@ -1271,6 +1413,36 @@
             halign: 'center'
             font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
             color: 0, 0, 0, 1
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: .07, 0.09
+        pos_hint: {'x' : .1, 'y' : 0.68}
+        Label:
+            id: 02
+            text: '-.-'
+            text_size: self.size
+            font_size: self.parent.width/2.6
+            multiline: False
+            valign: 'middle'
+            halign: 'center'
+            font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
+            color: 0, 0, 0, 1            
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: .07, 0.09
+        pos_hint: {'x' : .18, 'y' : 0.68}
+        Label:
+            id: C02
+            text: '-.-'
+            text_size: self.size
+            font_size: self.parent.width/2.6
+            multiline: False
+            valign: 'middle'
+            halign: 'center'
+            font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
+            color: 0, 0, 0, 1         
     
     BoxLayout:
         orientation: 'vertical'
@@ -1390,6 +1562,34 @@
         pos_hint: {'x' : .02, 'y' : 0.04}
         Label:
             id: RSSI
+            text: '-.-'
+            text_size: self.size
+            font_size: altitude.font_size
+            valign: 'middle'
+            halign: 'center'
+            font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
+            color: 0, 0, 0, 1
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: .07, 0.09
+        pos_hint: {'x' : .1, 'y' : 0.04}
+        Label:
+            id: Corrente
+            text: '-.-'
+            text_size: self.size
+            font_size: altitude.font_size
+            valign: 'middle'
+            halign: 'center'
+            font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
+            color: 0, 0, 0, 1
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: .07, 0.09
+        pos_hint: {'x' : .18, 'y' : 0.04}
+        Label:
+            id: Potencia
             text: '-.-'
             text_size: self.size
             font_size: altitude.font_size

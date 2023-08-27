@@ -13,20 +13,24 @@ class DBHandler():
         """
         self._dbpath = 'db\\scada.db'
         self._tablename = tablename
-        self._col_names = ["Altitude", 
-                        "Latitude", 
-                        "Longitude", 
-                        "Principal_Paraquedas_Estabilizador",
-                        "Redundancia_Paraquedas_Estabilizador",
-                        "Comercial_Paraquedas_Estabilizador",
-                        "Principal_Paraquedas_Principal",
-                        "Comercial_Paraquedas_Principal",
-                        "Acelerometro_X",
-                        "Acelerometro_Y",
-                        "Acelerometro_Z",
-                        "Giroscopio_Roll",
-                        "Giroscopio_Pitch",
-                        "Giroscopio_Yaw",
+        self._col_names = ["Sat", 
+                        "Corrente", 
+                        "Potencia", 
+                        "Temperatura",
+                        "Pressao",
+                        "Altitude",
+                        "Latitude",
+                        "Longitude",
+                        "Acelerometro X",
+                        "Acelerometro Y",
+                        "Acelerometro Z",
+                        "Giroscopio X",
+                        "Giroscopio Y",
+                        "Giroscopio Z",
+                        "O3",
+                        "CO2",
+                        "DoD",
+                        "SoC",
                         "RSSI"
         ]
         
@@ -92,21 +96,24 @@ class DBHandler():
         """
         try:
             newData = {"timestamp" : data['timestamp'],
-                        "Altitude" : data['Alt'], 
-                        "Latitude" : data['Lat'], 
-                        "Longitude" : data['Long'], 
-                        "Principal_Paraquedas_Estabilizador" : data['PPE'],
-                        "Redundancia_Paraquedas_Estabilizador" : data['Redundancia Paraquedas Estabilizador'],
-                        "Comercial_Paraquedas_Estabilizador" : data['Comercial Paraquedas Estabilizador'],
-                        "Principal_Paraquedas_Principal" : data['PPP'],
-                        "Comercial_Paraquedas_Principal" : data['Comercial Paraquedas Principal'],
-                        "Acelerometro_X" : data['Acel(x)'],
-                        "Acelerometro_Y" : data['Acel(y)'],
-                        "Acelerometro_Z" : data['Acel(z)'],
-                        "Giroscopio_Roll"   : data['Gyro(x)'],
-                        "Giroscopio_Pitch"  : data['Gyro(y)'],
-                        "Giroscopio_Yaw"    : data['Gyro(z)'],
-                        "RSSI" : data['RSSI']}
+                        "Corrente" : data['Cur'], 
+                        "Potencia" : data['Pot'], 
+                        "Temperatura" : data['Temp'], 
+                        "Pressao" : data['Press'],
+                        "Altitude" : data['Alt'],
+                        "Latitude" : data['Lat'],
+                        "Longitude" : data['Lon'],
+                        "aX" : data['aX'],
+                        "aY" : data['aY'],
+                        "aZ" : data['aZ'],
+                        "gX" : data['gX'],
+                        "gY"   : data['gY'],
+                        "gZ"  : data['gZ'],
+                        "O3"    : data['O3'],
+                        "CO2" : data['CO2'],
+                        "DoD"   :   data["DoD"],
+                        "SoC"   :   data["SoC"],
+                        "RSSI"  :   data["RSSI"]}
         
             return newData
         except Exception as e:
