@@ -538,7 +538,7 @@
             #     points: int(self.parent.width)*0.01, int(self.parent.height)*0.82, int(self.parent.width)*0.26, int(self.parent.height)*0.82
             #     width: 2
 
-        # ------------------ O2
+        # ------------------ O3
             Color:
                 rgb: .5, .5, .5
             Line:
@@ -559,7 +559,7 @@
                 pos: int(self.parent.width)*.1, int(self.parent.height)*0.68
                 size: int(self.parent.width)*.07,  int(self.parent.height)*0.09
 
-        # ------------------ O2
+        # ------------------ CO2
             Color:
                 rgb: .5, .5, .5
             Line:
@@ -1004,13 +1004,13 @@
                 font_name: 'fontes/montserrat/Montserrat-Regular.ttf'
                 color: 0, 0, 0, 1
 
-        # ------------------------- O2 ------------------------------
+        # ------------------------- O3 ------------------------------
         BoxLayout:
             orientation: 'vertical'
             pos_hint: {'x': .1, 'y': .78} 
             size_hint: (.07, .03)
             Label:
-                text: 'O2'
+                text: 'O3'
                 text_size: self.size
                 valign: 'center'
                 halign: 'left'
@@ -1290,7 +1290,7 @@
             size_hint: .06, .03
             pos_hint: {'x': .685 , 'y':.405}
             Label:
-                text: 'DoD'
+                text: 'SoC'
                 bold: True
                 text_size: self.size
                 valign: 'bottom'
@@ -1326,7 +1326,7 @@
             TimeSeriesGraph:
                 id: graphAltitude
                 xlabel: 'Tempo (s)'
-                ylabel: 'Altitude (m)'
+                ylabel: 'State of Charge (%)'
                 bakground_color: 1, 1, 1
                 x_ticks_minor: 5
                 x_ticks_major: 200
@@ -1419,7 +1419,7 @@
         size_hint: .07, 0.09
         pos_hint: {'x' : .1, 'y' : 0.68}
         Label:
-            id: 02
+            id: O3
             text: '-.-'
             text_size: self.size
             font_size: self.parent.width/2.6
@@ -1434,7 +1434,7 @@
         size_hint: .07, 0.09
         pos_hint: {'x' : .18, 'y' : 0.68}
         Label:
-            id: C02
+            id: CO2
             text: '-.-'
             text_size: self.size
             font_size: self.parent.width/2.6
