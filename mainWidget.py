@@ -141,10 +141,10 @@ class MainWidget(FloatLayout):
         """
         Método para a atualização dos da interface gráfica
         """
-        if self._instDados['sat'] == "Embauba":
+        if self._instDados['Sat'] == "Embauba":
             self.ids.altitude.text = str("{:.1f}".format(self._instDados['Alt']))
-            self.ids.O3.text = str("{:.2f}".format(self._instDados['O3']))
-            self.ids.CO2.text = str("{:.2f}".format(self._instDados['CO2']))
+            # self.ids.O3.text = str("{:.2f}".format(self._instDados['O3']))
+            # self.ids.CO2.text = str("{:.2f}".format(self._instDados['CO2']))
             self.ids.latitude.text = str("{:.15f}".format(self._instDados['Lat']))
             self.ids.longitude.text = str("{:.15f}".format(self._instDados['Lon']))
             self.ids.acelerometroX.text = str("{:.2f}".format(self._instDados['aX']))
@@ -161,7 +161,7 @@ class MainWidget(FloatLayout):
             self.ids.mapaMarker.lat = self._instDados['Lat']
             self.ids.mapaMarker.lon = self._instDados['Lon']
             self.ids.mapa.do_update(1)
-            self.updateBoolean()
+            # self.updateBoolean()
                                                     
             # Atualiza o grafico vertical de altitude
             self.ids.graficoMedidorAltitude.size_hint = (self.ids.medidorAltitude.size_hint[0], float(self._instDados['SoC']/(100))*self.ids.medidorAltitude.size_hint[1]) if self._instDados['SoC'] <= 100 else (self.ids.medidorAltitude.size_hint[0], self.ids.medidorAltitude.size_hint[1])
