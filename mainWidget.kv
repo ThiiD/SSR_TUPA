@@ -628,6 +628,15 @@
                     valign: 'center'
                     halign: 'center'
                     font_size: self.parent.width/35
+            
+            Button:
+                id: send_message
+                size_hint: .3, 0.3
+                pos_hint: {'top' : 0.65, 'right' : 1}
+                text: "Send Message"
+                font_size: self.size[0]*0.1
+                on_release: root._sendMsg.open()
+                disabled: False
          #       Label:
          #           id: data
          #           text: '29/05/2021'
@@ -1262,7 +1271,7 @@
             size_hint: .12, .03
             pos_hint: {'x': .325, 'y': .405}
             Label:
-                text: 'Posição do foguete'
+                text: 'Posição do satélite'
                 bold: True
                 text_size: self.size
                 valign: 'bottom'

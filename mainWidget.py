@@ -7,7 +7,7 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 # from kivy.uix.image import AsyncImage
 from kivy.core.window import Window
-from popups import ConnectSocketPopup, ConnectSocketPopupError
+from popups import ConnectSocketPopup, ConnectSocketPopupError, SendMessagePopup
 from timeseriesgraph import TimeSeriesGraph
 from kivy_garden.graph import LinePlot
 from kivy_garden.mapview import MapMarkerPopup
@@ -40,6 +40,7 @@ class MainWidget(FloatLayout):
         self._serverIP = kwargs.get('server_ip')
         self._port = kwargs.get('server_port')
         self._conn = ConnectSocketPopup(self._serverIP, self._port)
+        self._sendMsg = SendMessagePopup()
         self._connError = ConnectSocketPopupError()
         self._updateDB = False
         self._lock = Lock

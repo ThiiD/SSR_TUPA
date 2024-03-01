@@ -263,6 +263,162 @@
             valign: "middle"
             on_release: root.dismiss()
 
+<SendMessagePopup>:
+    title: "Envio de Mensagens"
+    size_hint: None, None
+    separator_height: 2
+    size: (600,280)
+    BoxLayout:
+        orientation:"vertical"
+        GridLayout:
+            rows: 4
+            cols: 3
+            size_hint: (1, .8)
+            CheckBox:
+                id: checkbox_iac_controle
+                _name: "Controle_IAC"
+                on_active: app.root._connect._getCommand(self._name, self.active)
+            Label:
+                id:txt_controle
+                font_size: 14
+                text: "Habilita Controle"
+            BoxLayout:
+                orientation:"horizontal"
+                CheckBox:
+                    id: checkbox_controle_sim
+                    group: "controle_options"
+                    _name: "Controle_Estado"
+                    command: 1
+                    on_active: app.root._connect._getCommand(self._name, self.command)
+                Label:
+                    id: txt_checkbox_controle_sim
+                    text: "Sim"
+                    font_size: 14
+                CheckBox:
+                    id: checkbox_controle_nao
+                    group: "controle_options"
+                    _name: "Controle_Estado"
+                    command: 0
+                    on_active: app.root._connect._getCommand(self._name, self.command)
+                Label:
+                    id: txt_checkbox_controle_nao
+                    text: "Não"
+                    font_size: 14
+            CheckBox:
+                id: checkbox_iac_antena
+                _name: "Antena_IAC"
+                on_active: app.root._connect._getCommand(self._name, self.active)
+            Label:
+                id:txt_antena
+                font_size: 14
+                text: "Ativa antena"
+            BoxLayout:
+                orientation:"horizontal"
+                CheckBox:
+                    id: checkbox_antena_sim
+                    group: "antena_options"
+                    _name: "Antena_Estado"
+                    command: 1
+                    on_active: app.root._connect._getCommand(self._name, self.command)
+                Label:
+                    id: txt_checkbox_antena_sim
+                    text: "Sim"
+                    font_size: 14
+                CheckBox:
+                    id: checkbox_antena_nao
+                    group: "antena_options"
+                    _name: "Antena_Estado"
+                    command: 0
+                    on_active: app.root._connect._getCommand(self._name, self.command)
+                Label:
+                    id: txt_checkbox_antena_nao
+                    text: "Não"
+                    font_size: 14
+            CheckBox:
+                id: checkbox_iac_missao
+                _name: "Missao_IAC"
+                on_active: app.root._connect._getCommand(self._name, self.active)
+            Label:
+                id:txt_missao
+                font_size: 14
+                text: "Ativa missão"
+            BoxLayout:
+                orientation:"horizontal"
+                CheckBox:
+                    id: checkbox_missao_m1
+                    group: "missao_options"
+                    _name: "Missao_Estado"
+                    command: 0
+                    on_active: app.root._connect._getCommand(self._name, self.command)
+                Label:
+                    id: txt_checkbox_missao_m1
+                    text: "M1"
+                    font_size: 14
+                CheckBox:
+                    id: checkbox_missao_m2
+                    group: "missao_options"
+                    _name: "Missao_Estado"
+                    command: 1
+                    on_active: app.root._connect._getCommand(self._name, self.command)
+                Label:
+                    id: txt_checkbox_missao_m2
+                    text: "M2"
+                    font_size: 14
+                CheckBox:
+                    id: checkbox_missao_stop
+                    group: "missao_options"
+                    _name: "Missao_Estado"
+                    command: 2
+                    on_active: app.root._connect._getCommand(self._name, self.command)
+                Label:
+                    id: txt_checkbox_missao_stop
+                    text: "Parar"
+                    font_size: 14
+            CheckBox:
+                id: checkbox_iac_setpoint
+                _name: "Setpoint_IAC"
+                on_active: app.root._connect._getCommand(self._name, self.active)
+            Label:
+                id:txt_setpoint
+                font_size: 14
+                text: "Valor setpoint:"
+            TextInput:
+                id: setpoint_value
+                font_size: 14
+                halign: 'center'
+                valign: 'middle'
+                size_hint_y: 0.5
+                text: "0"
+            # TextInput:
+            #     id: setpoint_value
+            #     size_hint: (0.8, 0.4)
+            #     font_size: 14
+            #     halign: 'center'
+            #     valign: 'middle'
+            #     text: ''
+
+        BoxLayout:
+            orientation:'horizontal'
+            size_hint: (1, .2)
+            Button:
+                id: send_button
+                size_hint_y: None
+                height: 40
+                text: 'Enviar'
+                on_release: 
+                    app.root._connect._getCommand("Setpoint_Value", setpoint_value.text)
+                    app.root._connect._sendData()
+                    root.dismiss()
+                    # app.root._connect._sendData(checkbox_iac_controle.active, checkbox_controle_sim.active, checkbox_controle_nao.active, \
+                    # checkbox_iac_antena.active,  checkbox_antena_sim.active, checkbox_antena_nao.active, \
+                    # checkbox_iac_missao.active, checkbox_missao_m1.active, checkbox_missao_m2.active, \
+                    # checkbox_iac_setpoint.active, setpoint_value.text )
+            Button:
+                size_hint_y: None
+                height: 40
+                text:'Fechar'
+                on_release: root.dismiss()
+
 
 
 <ConfiguraGraficosPopup>:
@@ -331,4 +487,3 @@
             Label:
                 text: "Porta"
                 font_size: 14
-

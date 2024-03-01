@@ -27,11 +27,20 @@ class ConnectSocketPopup(Popup):
         self.manager.add_widget(UARTConnection(name='UART'))
         self.manager.add_widget(WiFiConnection(name='WiFiConnection'))
 
+class SendMessagePopup(Popup):
+    '''
+    Popup para envio de mensagens via LoRa
+    '''
+    def __init__(self, **kwargs):        
+        super().__init__(**kwargs)
+
+
+
 
 class ConnectSocketPopupError(Popup):
     """
-        Popup de error de ConnectSocketPopup
-        """
+    Popup de error de ConnectSocketPopup
+    """
     def __init__(self, **kwargs):        
         super().__init__(**kwargs)
     pass

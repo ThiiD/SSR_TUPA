@@ -59,6 +59,17 @@ class Cliente():
 
 class UART():
     _firstData = True
+    _requests = {
+        "Controle_IAC"      :   0,
+        "Controle_Estado"   :   0,
+        "Antena_IAC"        :   0,
+        "Antena_Estado"     :   0,
+        "Missao_IAC"        :   0,
+        "Missao_Estado"     :   0,
+        "Setpoint_IAC"      :   0,
+        "Setpoint_Value"    :   0,
+    }
+
     def __init__(self, porta, baudrate):
         self._porta = porta
         self._baudrate = baudrate
@@ -91,6 +102,20 @@ class UART():
             return self._data
         except Exception as e:
             print(e)
+
+    def _sendData(self):
+        print(f"Enviando dados!: {self._requests}")
+        print(self._requests.values())
+        byteData = bytearray(list(self._requests.values()))
+        print(byteData)
+        self._ser.write(byteData)
+
+        pass
+
+    def _getCommand(self, name, status):
+        if status == True: self._requests[name] = 1
+        elif status == False: self._requests[name] = 0
+        else: self._requests[name] = int(status)
 # class WiFi():
 #     """
 #     Classe WiFI - Supervisório Supernova Rocketry - Comunicação WiFi
